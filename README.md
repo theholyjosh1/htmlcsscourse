@@ -9,10 +9,12 @@
 [![Slides](https://img.shields.io/badge/slides-148-7C5CFF?style=flat-square)](#whats-included)
 [![Modules](https://img.shields.io/badge/modules-7-22D3EE?style=flat-square)](#course-map)
 [![Level](https://img.shields.io/badge/level-beginner%20to%20master-4ADE80?style=flat-square)](#suggested-pace)
+[![License](https://img.shields.io/badge/license-MIT-3DA639?style=flat-square)](#license)
+[![PRs](https://img.shields.io/badge/PRs-welcome-FF69B4?style=flat-square)](#contributing)
 
 **7 modules · 148 slides · 11 typed code boxes · 5 projects · 3 capstones**
 
-[Quick start](#quick-start) · [Course map](#course-map) · [Use your own AI](#use-your-own-ai-as-your-reviewer) · [Exercises](#exercise-index) · [FAQ](#faq)
+[Get the course](#get-the-course) · [Quick start](#quick-start) · [Course map](#course-map) · [Use your own AI](#use-your-own-ai-as-your-reviewer) · [Exercises](#exercise-index) · [FAQ](#faq)
 
 </div>
 
@@ -26,7 +28,7 @@ Each deck is one module. Each module mixes short concept slides, annotated code 
 
 The course is deliberately framework-free. You learn the platform — semantic HTML, the box model, the cascade, Flexbox, Grid, responsive design, accessibility, motion — before touching a tool that hides it.
 
-> **If someone sent you this folder:** you do not need to know anything about the course, PowerPoint, or web development. Read [If someone sent you these files](#if-someone-sent-you-these-files), then start at deck `00`.
+> **If someone sent you a link to this repository:** you do not need to know anything about the course, PowerPoint, or web development. Read [Get the course](#get-the-course) to grab the files, then [If someone sent you these files](#if-someone-sent-you-these-files) to understand the format, and start at deck `00`.
 
 ---
 
@@ -42,16 +44,45 @@ The course is deliberately framework-free. You learn the platform — semantic H
 | [`05-Advanced-CSS-and-Motion.pptx`](05-Advanced-CSS-and-Motion.pptx) | 25 | Tokens, transitions, modern selectors, performance | Component library |
 | [`06-Mastery-Projects-and-Practice.pptx`](06-Mastery-Projects-and-Practice.pptx) | 20 | Architecture, audits, deployment, career | 3 capstone projects |
 
-Also included:
+Each link opens the file's page on GitHub, where **Download raw file** saves that single deck.
 
-- [`COURSE-OUTLINE.md`](COURSE-OUTLINE.md) — every slide, in order, for navigation.
-- `course/` — the Python source that generated the decks, if you want to edit or restyle them.
+This repository contains the seven decks and this README. Nothing else is needed: every lesson, code example, brief, checklist, quiz answer, and project description lives inside the `.pptx` files. Setup instructions are on the early slides of deck `00`.
+
+---
+
+## Get the course
+
+### Option 1 — Download the ZIP (no Git needed)
+
+1. Click the green **`Code`** button at the top of this repository.
+2. Choose **Download ZIP**.
+3. Unzip it somewhere you can find again, such as `Documents/`.
+
+### Option 2 — Clone it
+
+```bash
+git clone https://github.com/<your-username>/noahhtml.git
+cd noahhtml
+```
+
+Replace `<your-username>` with the account that owns this repository.
+
+### Option 3 — Take a single deck
+
+Click any `.pptx` file in the [deck table above](#whats-included), then use the **Download raw file** button on the right. To keep the course intact, grab all seven.
+
+### Two things that surprise people on GitHub
+
+- **GitHub does not preview `.pptx` files.** There is no slide viewer here. Clicking a deck shows a download page, not the slides. You must download the files and open them in PowerPoint, Keynote, or Google Slides.
+- **Keep all seven files in one folder.** They reference each other by name in the course map and setup slides.
+
+The whole course is about 700 KB, so no Git LFS or large-file setup is required.
 
 ---
 
 ## Quick start
 
-1. **Download the folder** (or clone the repository) and keep all seven decks together.
+1. Get the files with one of the options above and keep all seven decks together.
 2. Open **`00-Start-Here-and-Course-Map.pptx`** first. It covers setup and the submission format.
 3. Do the 30-minute toolkit setup on slide 6: VS Code, Live Server, Chrome.
 4. Open **`01-HTML-Foundations.pptx`** and complete practice **M1.1**.
@@ -372,31 +403,10 @@ If a review only talks about colour, it is not a review.
 ├── 04-Layout-Flexbox-and-Grid.pptx
 ├── 05-Advanced-CSS-and-Motion.pptx
 ├── 06-Mastery-Projects-and-Practice.pptx
-├── README.md
-├── COURSE-OUTLINE.md
-└── course/
-    ├── build.py
-    ├── deck_lib.py
-    └── content_m00.py ... content_m06.py
+└── README.md
 ```
 
-The `course/` folder is optional. It exists so the decks can be regenerated, restyled, or translated without editing 148 slides by hand.
-
----
-
-## Rebuilding the decks
-
-Requires Python 3.9+ and `python-pptx`.
-
-```bash
-cd course
-pip install python-pptx
-python3 build.py
-```
-
-This writes the seven `.pptx` files to the repository root. Edit the content files, not the generated decks, if you want changes to survive a rebuild.
-
-Speaker notes, syntax colouring, the code-box layout, and the theme are defined in `deck_lib.py`.
+That is the whole repository. Everything a learner needs is in those eight files.
 
 ---
 
@@ -452,9 +462,30 @@ In the speaker notes and on the answer-key slide that follows each quiz. If you 
 </details>
 
 <details>
+<summary><strong>I clicked a deck on GitHub and nothing opened.</strong></summary>
+
+GitHub does not render PowerPoint files. The file page has a **Download raw file** button — use it, then open the `.pptx` locally. If you downloaded the whole ZIP, the decks are already inside it.
+
+</details>
+
+<details>
+<summary><strong>Can I use just one deck?</strong></summary>
+
+You can read any deck on its own, but the exercises are cumulative: Module 3 styles the page you build in Module 1, Module 4 makes it responsive, Module 5 adds motion, and Module 6 audits what you have. If you want the course, take all seven.
+
+</details>
+
+<details>
+<summary><strong>Can I fork this and teach my own class?</strong></summary>
+
+Yes — it is MIT licensed. See [Publishing your own copy](#publishing-your-own-copy). Keep the lesson codes and the AI review prompts; they are what make the course work without an instructor present.
+
+</details>
+
+<details>
 <summary><strong>Can I share this with a friend?</strong></summary>
 
-Yes. Give them the seven decks, this README, and `COURSE-OUTLINE.md`. Point them at [If someone sent you these files](#if-someone-sent-you-these-files).
+Yes. Send them the repository link — the README explains everything they need. If you send files directly, send all seven decks and this README, and point them at [If someone sent you these files](#if-someone-sent-you-these-files).
 
 </details>
 
@@ -469,18 +500,41 @@ Yes — that is the point. The capstones are designed to be deployed and shown. 
 
 ## Contributing
 
-This is a personal course, but it is structured to be forked. If you adapt it:
+Feedback and corrections are welcome through GitHub issues.
 
-- keep the lesson codes stable (`M1.1`, `M4.2`, …) so submissions stay traceable;
-- keep the brief and the must-include list together on the same slide;
-- run `python3 build.py` after editing content;
-- update `COURSE-OUTLINE.md` if you add or remove slides.
+**Found a mistake?** Open an issue with the deck number and slide number. That pair is enough to find anything in 148 slides.
+
+**Suggesting a change?** Describe the slide, what is wrong, and what it should say. Because the decks are the only source files, any accepted edit is made directly in PowerPoint — there is no build step to break.
+
+If you adapt the course for a different audience, keep the lesson codes stable (`M1.1`, `M4.2`, …) so learner submissions stay traceable, and keep the brief and the must-include list on the same slide.
+
+---
+
+## Publishing your own copy
+
+You are free to fork this and run your own version, whether for a class, a bootcamp, or a study group.
+
+```bash
+git clone https://github.com/<your-username>/noahhtml.git my-course
+cd my-course
+git remote set-url origin https://github.com/<your-username>/my-course.git
+```
+
+Then, on GitHub:
+
+- **Turn off the fork relationship** only if you have substantially rewritten the material; otherwise keep it so upstream fixes can reach you.
+- **Add repository topics** so people find it: `html`, `css`, `course`, `learning`, `powerpoint`, `education`, `beginner-friendly`.
+- **Write a description** that states the level and format, e.g. *Beginner-to-advanced HTML and CSS course, delivered as 7 PowerPoint decks with AI-reviewable exercises.*
+- **Cut a release** (`v1.0.0`) so learners can download a stable ZIP from the Releases page instead of a moving `main` branch.
+- **Do not enable GitHub Pages for the root** unless you add an `index.html`; the repository is presentation files, not a website.
 
 ---
 
 ## License
 
-No license file is included. If you publish this repository, add one — MIT is a common choice for course materials. Until then, treat it as shared for personal learning.
+MIT. Use it, fork it, teach with it, remix it. Attribution is appreciated but not required.
+
+If you want the formal text in the repository, add a standard `LICENSE` file from [choosealicense.com](https://choosealicense.com/licenses/mit/) — nothing in the decks depends on it.
 
 <div align="center">
 
